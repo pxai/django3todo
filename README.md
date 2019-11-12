@@ -40,3 +40,15 @@ urlpatterns = [
     path('todo/', include('todo.urls')),
 ]
 ```
+## Add statics to url
+Django doesn't serve them by default but:
+```python
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+```
+
+## Add migrations
+Add models to the app, then:
+```shell
+python3 manage.py makemigrations
+python3 manage.py migrate
+```
