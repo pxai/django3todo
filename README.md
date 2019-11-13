@@ -52,3 +52,5 @@ Add models to the app, then:
 python3 manage.py makemigrations
 python3 manage.py migrate
 ```
+
+The last one will apply migration things
