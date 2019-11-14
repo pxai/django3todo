@@ -54,3 +54,16 @@ python3 manage.py migrate
 ```
 
 The last one will apply migration things
+
+## Creating models
+
+By default models shuould be placed in `models.py` 
+
+### Creating task
+
+```python
+a_record = Todo(task="Learn Django")
+
+# Guardar el objeto en la base de datos.
+a_record.save()
+```

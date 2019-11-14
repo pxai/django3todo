@@ -1,3 +1,5 @@
+from django.db import models
+
 class Todo(models.Model):
     """A model for todo"""
     task = models.CharField(max_length=400, help_text="Enter task info")
@@ -11,22 +13,8 @@ class Todo(models.Model):
     )
     created_at = models.DateTimeField(auto_now=True)
     modified_at = models.DateTimeField(auto_now_add=True)
-    task_type = models.ForeignKey("TaskType")
+    task_type = models.ForeignKey("TaskType",on_delete=models.CASCADE)
 
     # Other options: help_text, verbose_name, default, null(True), blank(True), primary_key (true)
 
     # Metadata
-    class Meta: 
-        ordering = ["-created_at", "task"]  # - meaning reverse
-
-        def get_absolute_url(self):
-            """
-            Devuelve la url para acceder a una instancia particular de MyModelName.
-            """
-            return reverse('model-detail-view', args=[str(self.id)])
-        
-        def __str__(self):
-            """
-            Cadena para representar el objeto MyModelName (en el sitio de Admin, etc.)
-            """
-            return self.field_name
