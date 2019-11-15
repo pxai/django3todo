@@ -49,7 +49,7 @@ urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 ## Add migrations
 Add models to the app, then:
 ```shell
-python3 manage.py makemigrations
+python3 manage.py makemigrations todo
 python3 manage.py migrate
 ```
 
@@ -63,7 +63,32 @@ By default models shuould be placed in `models.py`
 
 ```python
 a_record = Todo(task="Learn Django")
+```
 
 # Guardar el objeto en la base de datos.
+```
 a_record.save()
+```
+
+
+
+## The admin app
+You must set admin options in admin.py
+
+```python
+from django.contrib import admin
+from .models import Todo, TaskType
+# Register your models here
+admin.site.register(Todo)
+admin.site.register(TaskType)
+```
+You must create a superuser:
+```shell
+python3 manage.py createsuperuser
+```
+
+```python
+```
+
+```python
 ```
