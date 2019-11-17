@@ -70,7 +70,27 @@ a_record = Todo(task="Learn Django")
 a_record.save()
 ```
 
+## Templates
+First we need to define where we store templates
+in settings.py
+```python
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [
+            './todo/views/templates',
+        ],
+    },
+    {
+        'BACKEND': 'django.template.backends.jinja2.Jinja2',
+        'DIRS': [
+            '/home/html/jinja2',
+        ],
+    },
+]
+```
 
+```python
+```
 
 ## The admin app
 You must set admin options in admin.py
