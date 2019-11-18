@@ -1,6 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views import View
+from 
 
 from .forms.todo import TodoForm
 
@@ -17,6 +18,8 @@ class Todos(View):
         form = self.form_class(request.POST)
         if form.is_valid():
             # <process form cleaned data>
-            return HttpResponseRedirect('/success/')
+
+            print("Form is valid!!")
+            return HttpResponseRedirect('/todos')
 
         return render(request, self.template_name, {'form': form})
