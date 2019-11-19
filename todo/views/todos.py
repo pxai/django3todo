@@ -1,7 +1,6 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views import View
-from 
 
 from .forms.todo import TodoForm
 

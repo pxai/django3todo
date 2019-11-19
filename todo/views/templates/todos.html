@@ -11,8 +11,7 @@
         Hello There, from a template
 
         <form action="/todos" method="post">
-            <label for="task">Your task: </label>
-            <input id="task" type="text" name="task" value="{{ task }}">
+            {{ form }}
             <input type="submit" value="CREATE">
             {% csrf_token %}
         </form>
