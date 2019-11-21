@@ -15,6 +15,17 @@
             <input type="submit" value="CREATE">
             {% csrf_token %}
         </form>
+        <table>
+        <tr><th>Id</th><th>Task</th><th></th><th></th></tr>
+        {% for todo in todos %}
+            <tr>
+                <td>{{ todo.id }}</td>
+                <td>{{ todo.task }}</td>
+                <td><a href="/todos/update/{{ todo.id }}">Update</a></td>
+                <td><a href="/todos/delete/{{ todo.id }}">Del</a></td>
+            </tr>
+        {% endfor %}
+        </table>
     </div>
 </div>
 </body>
