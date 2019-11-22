@@ -13,7 +13,7 @@ class Todo(models.Model):
     )
     created_at = models.DateTimeField(auto_now=True)
     modified_at = models.DateTimeField(auto_now_add=True)
-    task_type = models.ForeignKey("TaskType",on_delete=models.CASCADE)
+    task_type = models.ForeignKey("TaskType",on_delete=models.CASCADE, default=1)
 
     # Other options: help_text, verbose_name, default, null(True), blank(True), primary_key (true)
 

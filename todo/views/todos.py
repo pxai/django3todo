@@ -20,7 +20,7 @@ class Todos(View):
         if form.is_valid():
             # <process form cleaned data>
             todo = Todo(task=form.cleaned_data['task'])
-            todo.save
+            todo.save()
             print("Form is valid!!")
             return HttpResponseRedirect('/todos')
 

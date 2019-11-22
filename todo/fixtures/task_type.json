@@ -1,0 +1,12 @@
+[
+    {
+        "model": "todo.TaskType",
+        "pk": 1,
+        "fields": { "name": "Low priority" }
+    },
+    {
+        "model": "todo.TaskType",
+        "pk": 2,
+        "fields": { "name": "Normal priority" }
+    }
+]

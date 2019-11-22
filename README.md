@@ -92,6 +92,15 @@ in settings.py
 ```python
 ```
 
+## Fixtures
+With fixtures we can load initial data.
+Set it in a fixtures directory in yaml or json and then
+run:
+
+```shell
+ manage.py loaddata fixture_file
+```
+
 ## The admin app
 You must set admin options in admin.py
 
