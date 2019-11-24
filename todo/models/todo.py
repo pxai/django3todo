@@ -1,8 +1,9 @@
 from django.db import models
+from django.utils.translation import gettext_lazy as _
 
 class Todo(models.Model):
     """A model for todo"""
-    task = models.CharField(max_length=400, help_text="Enter task info")
+    task = models.CharField(_("task"), max_length=400, help_text=_("Enter task info"))
     active = models.BooleanField(default=True)
     status = models.CharField(choices=(
             (0, "To do"),
