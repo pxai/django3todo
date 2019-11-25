@@ -101,6 +101,42 @@ run:
  manage.py loaddata fixture_file
 ```
 
+## Setting translations
+In code we use gettext with `_`.
+Set this option in `settings.py` to activate i18n and default lang:
+```python
+USE_I18N = True
+LANGUAGE_CODE = 'en-us'
+```
+Also define languages that you want to support
+```python
+LANGUAGES = (
+    ('en', _('English')),
+    ('es', _('Spanish')),
+    ('fr', _('French')),
+)
+```
+
+Also set up a locale directory:
+```python
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'i18n'),
+)
+```
+
+Yoou can let django to generate po files, it will check all you code to search messages
+that can be translated.
+```python
+django-admin.py makemessages -a
+```
+Then we have to compile messages with:
+```python
+django-admin compilemessages
+```
+
+Then we need to organize po files in the defined directory, with this format:
+`lang.po` for example: `en.po`
+Optionally you can use [poeditor](https://snapcraft.io/poedit)
 ## The admin app
 You must set admin options in admin.py
 
