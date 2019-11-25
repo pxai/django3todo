@@ -117,17 +117,28 @@ LANGUAGES = (
 )
 ```
 
-Also set up a locale directory:
+Also in theory you could set up a locale directory:
 ```python
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'i18n'),
 )
 ```
+But WHAT it WORKED was to create `project_root/app/locale/en` directory.
+
 
 Yoou can let django to generate po files, it will check all you code to search messages
 that can be translated.
 ```python
-django-admin.py makemessages -a
+django-admin.py makemessages --extension=html,py --locale=en --all
+```
+Or multiple at the same time:
+```python
+/usr/local/bin/python3.7 /home/pello/.local/bin/django-admin.py  makemessages --extension=html,py -l en -l es --all
+```
+
+Make sure that you have defined LOCALE_PATHS or you'll get a message lik
+``
+CommandError: Unable to find a locale path to store translations for file manage.py`
 ```
 Then we have to compile messages with:
 ```python
