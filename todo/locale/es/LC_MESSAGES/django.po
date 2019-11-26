@@ -20,24 +20,24 @@ msgstr ""
 
 #: models/todo.py:6
 msgid "task"
-msgstr ""
+msgstr "Tarea"
 
 #: models/todo.py:6
 msgid "Enter task info"
-msgstr ""
+msgstr "Introducir información de la tarea"
 
 #: settings.py:110
 msgid "English"
-msgstr ""
+msgstr "Inglés"
 
 #: settings.py:111
 msgid "Spanish"
-msgstr ""
+msgstr "Español"
 
 #: views/forms/validators/validate_text.py:7
 msgid "Text %(val) must contain task word"
-msgstr ""
+msgstr "El texto %(val) debe contener la palabra task"
 
 #: views/templates/about.html:7
 msgid "About page"
-msgstr ""
+msgstr "Acerca de"

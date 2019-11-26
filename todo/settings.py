@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-from django.utils.translation import gettext as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -104,7 +103,8 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
-
+# must use lazy gettext for this
+from django.utils.translation import gettext_lazy as _
 LANGUAGE_CODE = 'en'
 LANGUAGES = (
     ('en', _('English')),
@@ -121,10 +121,8 @@ USE_TZ = True
 
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'i18n'),
-   os.path.join(BASE_DIR,  'todo/locale'),
+    os.path.join(BASE_DIR,  'todo/locale'),
 )
-
-print("VAMOS %(path)" % {'path': LOCALE_PATHS})
 
 
 # Static files (CSS, JavaScript, Images)
