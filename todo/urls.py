@@ -18,6 +18,7 @@ from django.urls import path
 from django.urls import include
 from django.conf.urls.static import static
 from django.conf import settings
+from .views.default import Default
 from .views.hello import Hello
 from .views.about import About
 from .views.todos import Todos
@@ -25,6 +26,7 @@ from .views.todos import Todos
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('todo/', include('todo.urls')),
+    path('', Default.as_view()),
     path('hello', Hello.as_view()),
     path('about', About.as_view()),
     path('todos', Todos.as_view())
