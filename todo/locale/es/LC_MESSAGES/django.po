@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-22 22:49+0100\n"
+"POT-Creation-Date: 2019-12-28 10:37+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,6 +26,22 @@ msgstr "Tarea"
 msgid "Enter task info"
 msgstr "Introducir información de la tarea"
 
+#: models/todo.py:7
+msgid "active"
+msgstr "Activa"
+
+#: models/todo.py:8
+msgid "status"
+msgstr "Estado"
+
+#: models/todo.py:15
+msgid "created_at"
+msgstr "Creado en"
+
+#: models/todo.py:16
+msgid "modified_at"
+msgstr "Modificado en"
+
 #: settings.py:110
 msgid "English"
 msgstr "Inglés"
@@ -38,6 +54,6 @@ msgstr "Español"
 msgid "Text %(val) must contain task word"
 msgstr "El texto %(val) debe contener la palabra task"
 
-#: views/templates/about.html:7
+#: views/templates/about.html:8
 msgid "About page"
 msgstr "Acerca de"

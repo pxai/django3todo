@@ -1,3 +1,4 @@
+{% load i18n %} 
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -16,7 +17,7 @@
             {% csrf_token %}
         </form>
         <table>
-        <tr><th>Id</th><th>Task</th><th>Active</th><th>Status</th><th>Created at</th><th>Modified at</th><th></th><th></th></tr>
+        <tr><th>Id</th><th>{{ _("task") }}</th><th>{{ _("active") }}</th><th>{{ _("status") }}</th><th>Created at</th><th>Modified at</th><th></th><th></th></tr>
         {% for todo in todos %}
             <tr>
                 <td>{{ todo.id }}</td>

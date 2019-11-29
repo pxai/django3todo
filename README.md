@@ -131,7 +131,7 @@ that can be translated.
 ```python
 django-admin.py makemessages --extension=html,py --locale=en --all
 ```
-Or multiple at the same time:
+Or multiple at the same time (try inside app dir)
 ```python
 /usr/local/bin/python3.7 /home/pello/.local/bin/django-admin.py  makemessages --extension=html,py -l en -l es --all
 ```
