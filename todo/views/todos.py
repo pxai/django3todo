@@ -13,7 +13,7 @@ class Todos(View):
         form = self.form_class(initial=self.initial)
         todos = Todo.objects.all()
         print(todos)
-        return render(request, self.template_name, {'form': form, 'todos': todos})
+        return render(request, "base.html", {'template_name': self.template_name, 'form': form, 'todos': todos})
 
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
@@ -24,4 +24,4 @@ class Todos(View):
             print("Form is valid!!")
             return HttpResponseRedirect('/todos')
 
-        return render(request, self.template_name, {'form': form})
+        return render(request, "base.html", {'template_name': self.template_name, 'form': form})
