@@ -22,6 +22,7 @@ from .views.default import Default
 from .views.hello import Hello
 from .views.about import About
 from .views.todos import Todos
+from .views.todos_update import TodosUpdate
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,7 +30,8 @@ urlpatterns = [
     path('', Default.as_view()),
     path('hello', Hello.as_view()),
     path('about', About.as_view()),
-    path('todos', Todos.as_view())
+    path('todos', Todos.as_view()),
+    path('todos/update/<int:id>', TodosUpdate.as_view()),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
