@@ -11,6 +11,6 @@ class TodosUpdate(View):
 
     def get(self, request, id, *args, **kwargs):
         form = self.form_class(initial=self.initial)
-        todo = 0 # Todo.objects.get(id)
-        print("Im NOT IN UPDATE??")
+        todo = Todo.objects.get(pk=id)
+        print("Updating this id: %s" % (id))
         return render(request, "base.html", {'template_name': 'update.html', 'form': form, 'todo': todo})

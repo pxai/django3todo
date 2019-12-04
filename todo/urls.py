@@ -27,11 +27,11 @@ from .views.todos_update import TodosUpdate
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('todo/', include('todo.urls')),
-    path('', Default.as_view()),
-    path('hello', Hello.as_view()),
-    path('about', About.as_view()),
-    path('todos', Todos.as_view()),
-    path('todos/update/<int:id>', TodosUpdate.as_view()),
+    path('', Default.as_view(), name='home'),
+    path('hello', Hello.as_view(), name='hello'),
+    path('about', About.as_view(), name='about'),
+    path('todos', Todos.as_view(), name='todos'),
+    path('todos/update/<int:id>', TodosUpdate.as_view(), name='update_todo'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
