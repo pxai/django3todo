@@ -16,7 +16,7 @@
             <td>{{ todo.status }}</td>
             <td>{{ todo.created_at }}</td>
             <td>{{ todo.modified_at }}</td>
-            <td><a href="/todos/update/{{ todo.id }}">Update</a></td>
+            <td><a href="{% url 'update_todo' id=todo.id %}">Update</a></td>
             <td><a href="/todos/delete/{{ todo.id }}">Del</a></td>
         </tr>
     {% endfor %}
