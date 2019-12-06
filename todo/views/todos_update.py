@@ -10,7 +10,7 @@ class TodosUpdate(View):
     template_name = 'todos.html'
 
     def get(self, request, id, *args, **kwargs):
-        form = self.form_class(initial=self.initial)
         todo = Todo.objects.get(pk=id)
+        form = self.form_class(initial={'task': todo.task})
         print("Updating this id: %s" % (id))
         return render(request, "base.html", {'template_name': 'update.html', 'form': form, 'todo': todo})
