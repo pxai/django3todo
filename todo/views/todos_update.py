@@ -1,6 +1,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views import View
+import datetime
 from ..models.todo import Todo
 from .forms.todo import TodoForm
 
@@ -21,6 +22,7 @@ class TodosUpdate(View):
         if form.is_valid():
             # <process form cleaned data>
             todo = Todo(id=form.cleaned_data['id'],task=form.cleaned_data['task'])
+            todo.modified_at = datetime.datetime.now()
             todo.save()
             print("Form is valid!!")
             return HttpResponseRedirect('/todos')
