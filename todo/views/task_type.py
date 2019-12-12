@@ -1,3 +1,4 @@
+from django.urls import reverse
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import (
@@ -5,7 +6,6 @@ from django.views.generic.edit import (
     UpdateView,
     DeleteView
 )
-from django.core.urlresolvers import reverse_lazy
 
 from ..models import TaskType
 
@@ -20,13 +20,13 @@ class TaskTypeDetail(DetailView):
 
 class TaskTypeCreation(CreateView):
     model = TaskType
-    success_url = reverse_lazy('TaskTypes:list')
+    success_url = reverse('TaskTypes:list')
     fields = ['name', 'description']
 
 
 class TaskTypeUpdate(UpdateView):
     model = TaskType
-    success_url = reverse_lazy('TaskTypes:list')
+    success_url = reverse('TaskTypes:list')
     fields = ['name', 'description']
 
 
