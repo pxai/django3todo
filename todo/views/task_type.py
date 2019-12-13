@@ -18,18 +18,18 @@ class TaskTypeDetail(DetailView):
     model = TaskType
 
 
-class TaskTypeCreation(CreateView):
-    model = TaskType
-    success_url = reverse('TaskTypes:list')
-    fields = ['name', 'description']
+#class TaskTypeCreation(CreateView):
+#    model = TaskType
+#    success_url = reverse('TaskTypes:list')
+#    fields = ['name', 'description']
 
 
-class TaskTypeUpdate(UpdateView):
-    model = TaskType
-    success_url = reverse('TaskTypes:list')
-    fields = ['name', 'description']
+#class TaskTypeUpdate(UpdateView):
+#    model = TaskType
+#    success_url = reverse('TaskTypes:list')
+#    fields = ['name', 'description']
 
 
-class TaskTypeDelete(DeleteView):
-    model = TaskType
-    fields = ['name', 'description']
+#class TaskTypeDelete(DeleteView):
+#    model = TaskType
+#    fields = ['name', 'description']

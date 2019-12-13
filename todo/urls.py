@@ -24,7 +24,7 @@ from .views.about import About
 from .views.todos import Todos
 from .views.todos_update import TodosUpdate
 from .views.todos_delete import TodosDelete
-from .views.task_type import ( TaskTypeList, TaskTypeDetail, TaskTypeCreation, TaskTypeUpdate, TaskTypeDelete )
+from .views.task_type import TaskTypeList, TaskTypeDetail # , TaskTypeCreation, TaskTypeUpdate, TaskTypeDelete
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -35,12 +35,14 @@ urlpatterns = [
     path('todos', Todos.as_view(), name='todos'),
     path('todos/update/<int:id>', TodosUpdate.as_view(), name='update_todo'),
     path('todos/delete/<int:id>', TodosDelete.as_view(), name='delete_todo'),
+    path('^task_types$', TaskTypeList.as_view(), name='list'),
+    path('^task_types/(?P<pk>\d+)$', TaskTypeDetail.as_view(), name='detail'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
-#    path('^task_types$', TaskTypeList.as_view(), name='list'),
-#    path('^task_types/(?P<pk>\d+)$', TaskTypeDetail.as_view(), name='detail'),
+#    
+#    
 #    path('^task_types/new$', TaskTypeCreation.as_view(), name='new'),
 #    path('^task_types/update/(?P<pk>\d+)$', TaskTypeUpdate.as_view(), name='update'),
 #    path('^task_types/delete/(?P<pk>\d+)$', TaskTypeDelete.as_view(), name='delete'),
