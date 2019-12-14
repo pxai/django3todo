@@ -7,9 +7,9 @@
             <li>
                 <p>{{ task_type.name }}</p>
                 <p>
-                    <a href="{% url "task_types" task_type.id %}">Ver</a> | 
-                    <a href="{% url "task_types" task_type.id %}">Editar</a> | 
-                    <a href="{% url "task_types" task_type.id %}">Borrar</a> 
+                    <a href="{% url "task_types_detail" task_type.id %}">Ver</a> | 
+                    <a href="{% url "task_types_detail" task_type.id %}">Editar</a> | 
+                    <a href="{% url "task_types_detail" task_type.id %}">Borrar</a> 
                 </p>
             </li>
         {% endfor %}
