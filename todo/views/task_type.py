@@ -12,6 +12,7 @@ from ..models import TaskType
 
 class TaskTypeList(ListView):
     model = TaskType
+    template_name = "task_type_list.html"
 
 
 class TaskTypeDetail(DetailView):
