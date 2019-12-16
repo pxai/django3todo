@@ -17,6 +17,7 @@ class TaskTypeList(ListView):
 
 class TaskTypeDetail(DetailView):
     model = TaskType
+    template_name = "task_type_detail.html"
 
 
 #class TaskTypeCreation(CreateView):
