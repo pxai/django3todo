@@ -35,8 +35,8 @@ urlpatterns = [
     path('todos', Todos.as_view(), name='todos'),
     path('todos/update/<int:id>', TodosUpdate.as_view(), name='update_todo'),
     path('todos/delete/<int:id>', TodosDelete.as_view(), name='delete_todo'),
-    path('task_types', TaskTypeList.as_view(), name='task_types'),
-    path('task_types/<int:id>', TaskTypeDetail.as_view(), name='task_types_detail'),
+    path('task_types', TaskTypeList.as_view(), name='task_type'),
+    path('task_types/<int:pk>', TaskTypeDetail.as_view(), name='task_type_detail'),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
