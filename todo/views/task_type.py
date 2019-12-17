@@ -18,10 +18,11 @@ class TaskTypeDetail(DetailView):
     model = TaskType
     template_name = "task_type_detail.html" 
 
-#class TaskTypeCreation(CreateView):
-#    model = TaskType
-#    success_url = reverse('TaskTypes:list')
-#    fields = ['name', 'description']
+class TaskTypeCreation(CreateView):
+    model = TaskType
+    success_url = "task_type"
+    template_name = "task_type_form.html" 
+    fields = ['name', 'description']
 
 
 #class TaskTypeUpdate(UpdateView):
