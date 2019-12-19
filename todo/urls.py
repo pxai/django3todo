@@ -24,7 +24,7 @@ from .views.about import About
 from .views.todos import Todos
 from .views.todos_update import TodosUpdate
 from .views.todos_delete import TodosDelete
-from .views.task_type import TaskTypeList, TaskTypeDetail, TaskTypeCreation #, TaskTypeUpdate, TaskTypeDelete
+from .views.task_type import TaskTypeList, TaskTypeDetail, TaskTypeCreation, TaskTypeUpdate #, TaskTypeDelete
 # Other option: from . import views and then views.task_type.TaskTypeList
 
 urlpatterns = [
@@ -38,7 +38,8 @@ urlpatterns = [
     path('todos/delete/<int:id>', TodosDelete.as_view(), name='delete_todo'),
     path('task_types', TaskTypeList.as_view(), name='task_type'),
     path('task_types/<int:pk>', TaskTypeDetail.as_view(), name='task_type_detail'),
-    path('task_types/new', TaskTypeCreation.as_view(), name='task_type_new')
+    path('task_types/new', TaskTypeCreation.as_view(), name='task_type_new'),
+    path('task_types/update/<int:pk>', TaskTypeUpdate.as_view(), name='task_type_update')
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
