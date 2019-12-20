@@ -20,13 +20,14 @@ class TaskTypeDetail(DetailView):
 
 class TaskTypeCreation(CreateView):
     model = TaskType
-    success_url = "task_types"
+    success_url = "/task_types"
     template_name = "task_type_form.html" 
     fields = ['name', 'description']
 
 
 class TaskTypeUpdate(UpdateView):
     model = TaskType
+    success_url = "/task_types"
     template_name = "task_type_form.html" 
     fields = ['name', 'description']
 
