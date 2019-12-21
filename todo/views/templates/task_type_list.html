@@ -9,7 +9,7 @@
                 <p>
                     <a href="{% url "task_type_detail" task_type.id %}">Ver</a> | 
                     <a href="{% url "task_type_update" task_type.id %}">Editar</a> | 
-                    <a href="{% url "task_type_detail" task_type.id %}">Borrar</a> 
+                    <a href="{% url "task_type_delete" task_type.id %}">Borrar</a> 
                 </p>
             </li>
         {% endfor %}

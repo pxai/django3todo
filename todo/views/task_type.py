@@ -32,6 +32,7 @@ class TaskTypeUpdate(UpdateView):
     fields = ['name', 'description']
 
 
-#class TaskTypeDelete(DeleteView):
-#    model = TaskType
-#    fields = ['name', 'description']
+class TaskTypeDelete(DeleteView):
+    model = TaskType
+    template_name = "task_type_form.html" 
+    success_url = "/task_types"
